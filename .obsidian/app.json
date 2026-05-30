@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "relative",
+  "wikiLinksEnabled": true,
+  "propertiesInDocument": "source",
+  "showUnsupportedFiles": true
+}

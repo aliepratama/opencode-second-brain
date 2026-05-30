@@ -1,0 +1,21 @@
+{
+  // ============================================================
+  // OpenCode Second Brain — Agent Configuration
+  // ============================================================
+  // This config enables the PARA second brain skills for the
+  // default agent. Each skill provides best practices and
+  // automation for managing your knowledge vault.
+  //
+  // Skills are loaded from .opencode/skills/ on demand.
+  // Wildcards are supported: "para-*" enables all 12 skills.
+
+  "agent": {
+    "default": {
+      "permission": {
+        "skill": {
+          "para-*": "allow"
+        }
+      }
+    }
+  }
+}

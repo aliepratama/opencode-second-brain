@@ -1,0 +1,6 @@
+{
+  "folder": "daily",
+  "template": "templates/_daily-log.md",
+  "format": "YYYY-MM-DD",
+  "autorun": false
+}
