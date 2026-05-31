@@ -1,4 +1,35 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Obsidian
+.obsidian/workspace*.json
+.obsidian/plugins/
+.obsidian/themes/
+
+# Logs
+*.log

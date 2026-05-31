@@ -1,0 +1,16 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://opencode.ai"
+    },
+    {
+      "pattern": "^https://obsidian.md"
+    }
+  ],
+  "replacementPatterns": [],
+  "httpHeaders": [],
+  "timeout": "20s",
+  "retryOn429": true,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 403]
+}

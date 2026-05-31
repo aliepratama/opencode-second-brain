@@ -1,6 +1,11 @@
 # opencode-second-brain
 
-A minimal, ready-to-use PARA second brain starter pack — designed to work with [OpenCode](https://opencode.ai) and [Obsidian](https://obsidian.md). Ships with 12 AI skills, 9 Python automation scripts, and a shared utility library.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![GitHub last commit](https://img.shields.io/github/last-commit/aliepratama/opencode-second-brain)](https://github.com/aliepratama/opencode-second-brain)
+
+A minimal, ready-to-use PARA second brain starter pack — designed to work with [OpenCode](https://opencode.ai) and [Obsidian](https://obsidian.md). Ships with **16 AI skills**, **13 Python automation scripts**, and a shared utility library. Two editions: General and Developer.
 
 ## What This Is
 
@@ -207,6 +212,16 @@ cp -r editions/dev ~/my-dev-brain
 
 See `editions/dev/README.md` for full documentation.
 
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on reporting bugs, suggesting features, and submitting pull requests.
+
+Before contributing, please read our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Security
+
+To report a security vulnerability, please see [SECURITY.md](SECURITY.md).
+
 ## License
 
-MIT — use it, fork it, share it.
+[MIT](LICENSE) — use it, fork it, share it.

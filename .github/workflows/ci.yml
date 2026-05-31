@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall .opencode/skills/ -q
+          python -m compileall editions/dev/setup.py -q
+
+      - name: Check Markdown links
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'no'
+          config-file: '.github/mlc_config.json'
+        continue-on-error: true
+
+  validate-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check shared library imports
+        run: |
+          cd .opencode/skills
+          python -c "from _shared import vault, frontmatter, wikilinks, dashboard; print('Shared lib OK')"
+
+      - name: Validate SKILL.md files have frontmatter
+        run: |
+          import os
+          errors = []
+          for root, dirs, files in os.walk('.opencode/skills'):
+              for f in files:
+                  if f == 'SKILL.md':
+                      path = os.path.join(root, f)
+                      with open(path) as fh:
+                          content = fh.read()
+                      if not content.startswith('---'):
+                          errors.append(path)
+          if errors:
+              for e in errors:
+                  print(f'MISSING FRONTMATTER: {e}')
+              exit(1)
+          print('All SKILL.md files have frontmatter')
+        shell: python
+
+      - name: Count skills
+        run: |
+          count=$(find .opencode/skills -name "SKILL.md" | wc -l)
+          echo "Total skills: $count"
