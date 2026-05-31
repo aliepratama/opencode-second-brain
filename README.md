@@ -176,6 +176,37 @@ from _shared import vault, frontmatter, wikilinks, dashboard
 - **`.obsidian/templates.json`**: template folder set to `templates/`
 - **`.opencode/opencode.jsonc`**: all `para-*` skills allowed for default agent
 
+## Developer Edition
+
+This repo also includes a **Developer Edition** — the same PARA foundation extended with developer-specific workflows: Architecture Decision Records, code snippet management, bug tracking, and tech learning journals.
+
+### What's Different
+
+| Feature | General Edition | Developer Edition |
+|---------|----------------|-------------------|
+| **Extra folders** | — | `adrs/`, `snippets/`, `learnings/`, `errors/` |
+| **Templates** | 4 (daily, project, weekly, monthly) | + `_adr.md`, `_bug-tracker.md`, `_code-snippet.md`, `_tech-learning.md`, `_sprint-review.md` |
+| **Skills** | 12 PARA + formatting | + `para-adr`, `para-snippet`, `para-bug-tracker`, `para-dev-log` |
+| **Daily log** | Progress, blockers, insights | + Commits, PRs, code reviews |
+| **Status flows** | `active → on-hold → done → archived` | + bugs: `open → investigating → fixed → verified → closed` |
+
+### Quick Install
+
+```bash
+# Fresh dev vault
+python editions/dev/setup.py ~/my-dev-brain --init
+
+# Add dev extras to existing vault
+python editions/dev/setup.py ~/my-existing-vault --merge
+```
+
+Or copy manually:
+```bash
+cp -r editions/dev ~/my-dev-brain
+```
+
+See `editions/dev/README.md` for full documentation.
+
 ## License
 
 MIT — use it, fork it, share it.

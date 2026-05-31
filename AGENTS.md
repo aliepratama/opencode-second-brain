@@ -69,3 +69,32 @@ When interacting with this vault:
 - **Daily → Project**: `[[../projects/project-name.md]]` from daily logs
 - **Project → Dashboard**: `[[../Dashboard|Dashboard]]` from project briefs
 - **Dashboard → Daily**: `[[daily/YYYY-MM-DD]]` from Dashboard
+
+## 6. Developer Edition Extension
+
+When this vault is used as a **Developer Edition** (via `editions/dev/setup.py --init`), additional rules apply. See `editions/dev/AGENTS.md` for the full developer edition manual. Key additions:
+
+### Extra Folders
+| Folder | Purpose | Frontmatter |
+|--------|---------|-------------|
+| `adrs/` | Architecture Decision Records | `tags: adr`, `status: proposed\|accepted\|deprecated` |
+| `snippets/` | Reusable code snippets | `tags: snippet`, `language`, `tags` |
+| `learnings/` | Tech learning journal | `tags: learning`, `topic`, `status: learning\|understood\|mastered` |
+| `errors/` | Bug/error tracking | `tags: bug`, `status: open\|investigating\|fixed\|verified` |
+
+### Additional Status Flows
+
+**Bugs:** `open → investigating → fixed → verified → closed`
+**ADRs:** `proposed → accepted → deprecated → superseded`
+
+### Developer-Specific Rules
+10. **Commit References**: Daily dev logs should reference git commit hashes.
+11. **ADR Immutability**: Never edit a published ADR — supersede with a new one.
+12. **Snippet Convention**: Code snippets use language-specific code fences (```python, ```go).
+13. **Bug Documentation**: Always include reproduction steps in bug reports.
+
+### Developer Skills (extension of para-*)
+- `para-adr` — Architecture Decision Record workflow
+- `para-snippet` — Code snippet save/search/list
+- `para-bug-tracker` — Bug report creation and tracking
+- `para-dev-log` — Developer daily log with commits, PRs, code reviews
